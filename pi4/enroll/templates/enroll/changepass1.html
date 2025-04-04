@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change password</title>
+</head>
+<body>
+    <h1>changepass</h1>
+    <form action="" class="POST" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+          {{fm.label_tag}} {{fm}} {{fm.error|striptags}} <br><br>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
+    <a href="{% url 'login' %}">Login</a>
+</body>
+</html>
